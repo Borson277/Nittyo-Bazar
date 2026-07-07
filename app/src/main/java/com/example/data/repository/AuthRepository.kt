@@ -209,7 +209,7 @@ class AuthRepository(
                 val db = FirebaseFirestore.getInstance()
                 db.collection("users").document(firebaseUser.uid).set(user).await()
                 
-                _currentUser.value = user
+                // _currentUser.value = user // Do not login immediately
                 // Cache user locally
                 userDao.insertUser(UserEntity.fromUser(user))
                 Result.success(user)
@@ -228,7 +228,7 @@ class AuthRepository(
                 role = role,
                 createdAt = System.currentTimeMillis()
             )
-            saveDemoSession(newUser)
+            // saveDemoSession(newUser) // Do not login immediately
             Result.success(newUser)
         }
     }

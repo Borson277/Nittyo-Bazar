@@ -141,7 +141,7 @@ class MainActivity : ComponentActivity() {
                                     navController.popBackStack()
                                 },
                                 onNavigateToHome = {
-                                    navController.navigate("main_host") {
+                                    navController.navigate("login") {
                                         popUpTo("login") { inclusive = true }
                                         popUpTo("register") { inclusive = true }
                                     }
